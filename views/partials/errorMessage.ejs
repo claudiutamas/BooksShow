@@ -1,0 +1,5 @@
+<%# The app get to this point multiple times,
+    but only when we have a message it show it %>
+<% if (locals.errorMessage != null) { %>
+  <%= errorMessage %>
+<% } %>

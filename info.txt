@@ -1,0 +1,13 @@
+--save-dev | the instalation is local
+
+npm i --save-dev dotenv
+dotenv | to acces system variable (environment)
+
+npm i body-parser | to acces input element (form fields)
+
+npm run devStart | to run app
+
+-------------------
+Git
+
+// add to local
