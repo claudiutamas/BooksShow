@@ -5,9 +5,6 @@ dotenv | to acces system variable (environment)
 
 npm i body-parser | to acces input element (form fields)
 
+npm i multer | to put image in a file
+
 npm run devStart | to run app
-
--------------------
-Git
-
-// add to local
