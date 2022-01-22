@@ -7,4 +7,6 @@ npm i body-parser | to acces input element (form fields)
 
 npm i multer | to put image in a file
 
+filepond | load files (image) to database
+
 npm run devStart | to run app

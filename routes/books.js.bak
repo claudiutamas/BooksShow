@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+// Old staff: const path = require('path')
 
 const Book = require('../models/book')
 const Author = require('../models/author')
@@ -34,6 +35,15 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
   renderNewPage(res, new Book())
 })
+
+/* Old staff: used for load image on server, not in database | This use multer extension
+const uploadPath = path.join('public', Book.coverImageBasePath)
+const upload = multer({
+  dest: uploadPath,
+  fileFilter: (req, file, callback) => {
+    callback(null, imageMimeTypes.includes(file.mimetype))
+  }
+}) */
 
 // Create Book Route
 router.post('/', async (req, res) => {
