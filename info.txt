@@ -4,9 +4,8 @@ npm i --save-dev dotenv
 dotenv | to acces system variable (environment)
 
 npm i body-parser | to acces input element (form fields)
-
 npm i multer | to put image in a file
-
 filepond | load files (image) to database
+npm i method-override | send to the server a POST with parameter (for UPDATE, DELETE)
 
 npm run devStart | to run app

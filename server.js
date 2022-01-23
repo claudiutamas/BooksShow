@@ -6,6 +6,7 @@ const express = require('express')
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
@@ -15,6 +16,8 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
+// parameter '_method' is used in POST to change send method to DELETE etc.
+app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(
   bodyParser.urlencoded({
@@ -29,7 +32,7 @@ mongoose.connect(process.env.DATABASE_URL, {
   useUnifiedTopology: true
 })
 const db = mongoose.connection
-db.on('error', error => console.error(error))
+db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
 app.use('/', indexRouter)
