@@ -1,11 +1,12 @@
 const express = require('express')
-const router = express.Router()
 const Author = require('../models/author')
 const Book = require('../models/book')
 
+const router = express.Router()
+
 // All Authors Route
 router.get('/', async (req, res) => {
-  let searchOptions = {}
+  const searchOptions = {}
   if (req.query.name != null && req.query.name != '') {
     // 'i' - case insensitive
     searchOptions.name = new RegExp(req.query.name, 'i')
@@ -37,7 +38,7 @@ router.post('/', async (req, res) => {
   } catch {
     res.render('authors/new', {
       author: author,
-      errorMessage: `Error creating Author`
+      errorMessage: 'Error creating Author'
     })
   }
 })
@@ -56,7 +57,7 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-// Edit Author by Id
+// Edit Author
 router.get('/:id/edit', async (req, res) => {
   try {
     const author = await Author.findById(req.params.id)
@@ -66,6 +67,7 @@ router.get('/:id/edit', async (req, res) => {
   }
 })
 
+// Update Author
 router.put('/:id', async (req, res) => {
   let author
   try {
@@ -79,12 +81,13 @@ router.put('/:id', async (req, res) => {
     } else {
       res.render('authors/edit', {
         author: author,
-        errorMessage: `Error updateing Author`
+        errorMessage: 'Error updateing Author'
       })
     }
   }
 })
 
+// Delete Author
 router.delete('/:id', async (req, res) => {
   let author
   try {

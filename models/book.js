@@ -37,6 +37,7 @@ const bookSchema = new mongoose.Schema({
 })
 
 // Creates a new property 'coverImagePath' from the existing ones
+// eslint-disable-next-line consistent-return
 bookSchema.virtual('coverImagePath').get(function () {
   // Use function() to have acces at 'this'
   if (this.coverImage != null && this.coverImageType != null) {

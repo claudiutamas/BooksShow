@@ -11,19 +11,17 @@ This file is the common part of this two sections. -->
 <div>
   <label>Author</label>
   <select name="authorId">
-  <% authors.forEach(author => { 
-    if(author.id === book.authorId) { %>
+    <% authors.forEach(author=> {
+      if(author.id === book.authorId) { %>
       <option selected label="<%= author.name %>" value="<%= author.id %>">
-    <% } else { %>
+        <% } else { %>
       <option label="<%= author.name %>" value="<%= author.id %>">
-    <% }
-  }) %>
+        <% } }) %>
   </select>
 </div>
 <div>
   <label>Publish Date</label>
-  <input type="date" name="publishDate"
-    value="<%= book.publishDate == null ? '' : 
+  <input type="date" name="publishDate" value="<%= book.publishDate == null ? '' : 
     book.publishDate.toISOString().split('T')[0] %>">
 </div>
 <div>
@@ -36,5 +34,7 @@ This file is the common part of this two sections. -->
 </div>
 <div>
   <label>Description</label>
-  <textarea name="description" value="<%= book.description %>"></textarea>
+  <textarea name="description" value="<%= book.description %>">
+    <%= book.description %>
+  </textarea>
 </div>

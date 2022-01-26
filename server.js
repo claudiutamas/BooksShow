@@ -1,8 +1,10 @@
 if (process.env.NODE_ENV !== 'production') {
+  // eslint-disable-next-line import/no-extraneous-dependencies
   require('dotenv').config()
 }
 
 const express = require('express')
+
 const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
@@ -13,7 +15,7 @@ const authorRouter = require('./routes/authors')
 const bookRouter = require('./routes/books')
 
 app.set('view engine', 'ejs')
-app.set('views', __dirname + '/views')
+app.set('views', `${__dirname}/views`)
 app.set('layout', 'layouts/layout')
 app.use(expressLayouts)
 // parameter '_method' is used in POST to change send method to DELETE etc.

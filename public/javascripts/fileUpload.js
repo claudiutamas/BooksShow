@@ -1,14 +1,15 @@
+/* eslint-disable no-undef */
 FilePond.registerPlugin(
   FilePondPluginImagePreview,
   FilePondPluginImageResize,
-  FilePondPluginFileEncode
+  FilePondPluginFileEncode,
 )
 
 FilePond.setOptions({
   stylePanelAspectRatio: 150 / 100,
-  imageResizeTargetWith: 100,
+  imageResizeTargetWidth: 100,
   imageResizeTargetHeight: 150
 })
 
 // Turn all file input elements into ponds
-FilePond.parse(document.body)
+FilePond.parse(document.body);

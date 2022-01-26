@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const book = require('./book')
 const Book = require('./book')
 
 const authorSchema = new mongoose.Schema({
@@ -11,6 +10,7 @@ const authorSchema = new mongoose.Schema({
 
 // add conditions before deleting
 authorSchema.pre('remove', function (next) {
+  // Use function() to have acces at next (?!)
   Book.find({ authorId: this.id }, (err, book) => {
     if (err) {
       next(err)
