@@ -1,0 +1,17 @@
+:root {
+  /* hue value are from 0 to 360:
+        Red falls between 0 and 60 degrees.
+        Yellow falls between 61 and 120 degrees.
+        Green falls between 121 and 180 degrees.
+        Cyan falls between 181 and 240 degrees.
+        Blue falls between 241 and 300 degrees.
+        Magenta falls between 301 and 360 degrees.
+  */
+  --color-base-hue: 200;
+  /* danger color is calculated to be opposite to base color:
+      base-color - middle of max hue color (180) */
+  --color-danger-hue: calc( var(--color-base-hue) - 180);
+  --color-background-dark: hsl(var(--color-base-hue), 100%, 8%);
+  --color-background-light: hsl(var(--color-base-hue), 100%, 16%);
+  --color-text-light: hsl(var(--color-base-hue), 100%, 87%);
+}
