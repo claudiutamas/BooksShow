@@ -1,7 +1,10 @@
 <h2>New Author</h2>
 <form action="/authors" method="POST">
-  <%- include('_form_fields') %> <!-- common code -->
-  <!-- <%-  %> | include this -->
-  <a href="/authors">Cancel</a>
-  <button type="submit">Create</button>
+  <%- include('_form_fields') %>
+    <!-- common code -->
+    <!-- <%-  %> | include this -->
+    <div class="form-row form-row-right btn-row">
+      <a class="btn btn-danger" href="/authors">Cancel</a>
+      <button class="btn btn-primary" type="submit">Create</button>
+    </div>
 </form>
