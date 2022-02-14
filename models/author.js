@@ -11,10 +11,10 @@ const authorSchema = new mongoose.Schema({
 // add conditions before deleting
 authorSchema.pre('remove', function (next) {
   // Use function() to have acces at next (?!)
-  Book.find({ authorId: this.id }, (err, book) => {
+  Book.find({ authorId: this.id }, (err, books) => {
     if (err) {
       next(err)
-    } else if (book.length > 0) {
+    } else if (books.length > 0) {
       next(new Error('This author has books still'))
     } else {
       next()
