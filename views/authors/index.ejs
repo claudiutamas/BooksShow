@@ -3,7 +3,7 @@
   <div class="form-row">
     <div class="form-item">
       <label>Name</label>
-      <input type="text" name="name" value="<%= searchOptions.name %>">
+      <input type="text" name="name" value="<?= searchOptions.name ?>">
     </div>
   </div>
   <div class="form-row form-row-right">
@@ -11,12 +11,16 @@
   </div>
 </form>
 <br>
-<% authors.forEach(author => { %>
-  <div><%= author.name %></div>
-  <div class="btn-row">
-    <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
-    <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
-    <!-- this form use method-override extension -->
-    <%- include('../partials/deleteForm', { url: `/authors/${author.id}`}) %>
+<? authors.forEach(author => { ?>
+<div class="author-row">
+  <div class="author-name">
+    <?= author.name ?>
   </div>
-<% }) %>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/authors/<?= author.id ?>">View</a>
+    <a class="btn btn-primary" href="/authors/<?= author.id ?>/edit">Edit</a>
+    <!-- this form use method-override extension -->
+    <?- include('../partials/deleteForm', { url: `/authors/${author.id}`}) ?>
+  </div>
+</div>
+<? }) ?>

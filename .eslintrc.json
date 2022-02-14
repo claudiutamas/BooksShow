@@ -28,7 +28,13 @@
         "function-paren-newline": "off",
         "eol-last": "off",
         "func-names": "off",
-        "import/newline-after-import": "off"
+        "import/newline-after-import": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 80
+            }
+        ]
     },
     "settings": {
         "import/resolver": {

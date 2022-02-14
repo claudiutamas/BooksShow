@@ -33,7 +33,7 @@
   justify-content: flex-end;
 }
 
-.form-item > label {
+.form-item > label, .form-item-no-grow > label {
   font-size: var(--form-label-font-size);
   margin-bottom: .25rem;
   margin-left: .25rem;

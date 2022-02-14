@@ -14,6 +14,9 @@ const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
 const bookRouter = require('./routes/books')
 
+let ejs = require('ejs')
+ejs.delimiter = '?';
+
 app.set('view engine', 'ejs')
 app.set('views', `${__dirname}/views`)
 app.set('layout', 'layouts/layout')

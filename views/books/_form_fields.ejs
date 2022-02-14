@@ -5,18 +5,18 @@ This file is the common part of this two sections. -->
 <div class="form-row">
   <div class="form-item">
     <label>Title</label>
-    <input type="text" name="title" value="<%= book.title %>">
+    <input type="text" name="title" value="<?= book.title ?>">
   </div>
-  <!-- <%= book.title %> | render author.name, not show direct text -->
+  <!-- <?= book.title ?> | render author.name, not show direct text -->
   <div class="form-item">
     <label>Author</label>
     <select name="authorId">
-      <% authors.forEach(author=> {
-        if(author.id === book.authorId) { %>
-        <option selected label="<%= author.name %>" value="<%= author.id %>">
-          <% } else { %>
-        <option label="<%= author.name %>" value="<%= author.id %>">
-          <% } }) %>
+      <? authors.forEach(author=> {
+        if(author.id === book.authorId) { ?>
+      <option selected label="<?= author.name ?>" value="<?= author.id ?>">
+        <? } else { ?>
+      <option label="<?= author.name ?>" value="<?= author.id ?>">
+        <? } }) ?>
     </select>
   </div>
 </div>
@@ -24,24 +24,24 @@ This file is the common part of this two sections. -->
 <div class="form-row">
   <div class="form-item">
     <label>Publish Date</label>
-    <input type="date" name="publishDate" value="<%= book.publishDate == null ? '' : 
-      book.publishDate.toISOString().split('T')[0] %>">
+    <input type="date" name="publishDate" value="<?= book.publishDate == null ? '' : 
+      book.publishDate.toISOString().split('T')[0] ?>">
   </div>
   <div class="form-item">
     <label>Page Count</label>
-    <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+    <input type="number" name="pageCount" min="1" value="<?= book.pageCount ?>">
   </div>
 </div>
 
 <div class="form-row">
   <div class="form-item-no-grow">
     <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
+    <input type="file" name="cover" class="book-cover filepond">
   </div>
   <div class="form-item">
     <label>Description</label>
-    <textarea name="description" value="<%= book.description %>">
-      <%= book.description %>
+    <textarea name="description" value="<?= book.description ?>">
+      <?= book.description ?>
     </textarea>
   </div>
 </div>
