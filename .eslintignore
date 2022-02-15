@@ -2,6 +2,7 @@
 .env
 .bak
 node_modules
+_backup
 _books_extra
 .vscode
 *.zip
